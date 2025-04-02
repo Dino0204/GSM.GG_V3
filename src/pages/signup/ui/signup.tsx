@@ -3,6 +3,7 @@ import { useForm, Controller } from "react-hook-form"
 import { DevTool } from "@hookform/devtools"
 import { Input } from "../../../shared/ui/input/input"
 import { Button } from "../../../shared/ui/button/button"
+import { useNavigate } from "react-router-dom"
 
 interface SignUpProps {
   name: string,
@@ -12,6 +13,8 @@ interface SignUpProps {
 }
 
 export default function SignUp() {
+  const go = useNavigate()
+
   const {
     control,
     handleSubmit,
@@ -88,6 +91,7 @@ export default function SignUp() {
           />
         </div>
         <Button variant="primary" label="회원가입" type="submit" isActive={isDirty && isValid} />
+        <a className="text-primary-300 font-semibold cursor-pointer" onClick={() => go('/login')}>이미 계정이 있으시다먼 [로그인]</a>
       </form>
     </AuthForm>
   )

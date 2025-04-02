@@ -1,5 +1,6 @@
 import { AuthForm } from "../../../widgets/auth/ui/authForm"
 import { useForm, Controller } from "react-hook-form"
+import { useNavigate } from "react-router-dom"
 import { DevTool } from "@hookform/devtools"
 import { Input } from "../../../shared/ui/input/input"
 import { Button } from "../../../shared/ui/button/button"
@@ -10,6 +11,8 @@ interface LoginProps {
 }
 
 export default function Login() {
+  const go = useNavigate()
+
   const {
     control,
     handleSubmit,
@@ -23,6 +26,7 @@ export default function Login() {
   const onSubmit = (data: LoginProps) => {
     alert(`ℹ️ Form Submitted: ${JSON.stringify(data)}`)
   }
+
 
   return (
     <AuthForm label={"GSM.GG 로그인"}>
@@ -60,6 +64,7 @@ export default function Login() {
           />
         </div>
         <Button variant="primary" label="회원가입" type="submit" isActive={isDirty && isValid} />
+        <a className="text-primary-300 font-semibold cursor-pointer" onClick={() => go('/signup')}>아직 계정이 없으시다먼 [회원가입]</a>
       </form>
     </AuthForm>
   )
