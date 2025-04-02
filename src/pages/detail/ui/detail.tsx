@@ -59,7 +59,7 @@ export default function Detail() {
     <div className="flex justify-center text-white">
       <div className="relative">
         <div className="overflow-hidden w-full max-w-80">
-          <div className={`flex ${style}`} >
+          <div className="flex" style={style}>
             {
               champion?.skins.map((skin) =>
                 <Detailcard
@@ -71,7 +71,7 @@ export default function Detail() {
             }
           </div>
         </div>
-        <div className="absolute w-full flex justify-between top-[50%]">
+        <div className="absolute w-full flex justify-between top-1/2">
           <button className="text-white text-2xl cursor-pointer" onClick={prevSlide}>
             {"◁"}
           </button>
