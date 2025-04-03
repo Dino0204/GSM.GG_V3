@@ -17,7 +17,7 @@ interface API_RESPONSE<T> {
   status?: number;
 }
 
-export async function API<Res, Req = {}>(
+export async function API<Res, Req = any>(
   endpoint: string,
   options: API_OPTIONS<Req>
 ): Promise<API_RESPONSE<Res>> {
@@ -25,7 +25,6 @@ export async function API<Res, Req = {}>(
     const res = await axios(endpoint, {
       method: options.method,
       headers: {
-        "Content-Type": "application/json", // 기본 Content-Type 설정
         ...options.headers,
       },
       data: options.body,
@@ -44,8 +43,7 @@ export async function API<Res, Req = {}>(
       success: false,
       error: err.message,
       status: err.response?.status,
-      message:
-        err.response?.data?.message || "요청 처리 중 오류가 발생했습니다.",
+      message: (err.response?.data as { message?: string })?.message,
     };
   }
 }

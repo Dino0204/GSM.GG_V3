@@ -9,8 +9,19 @@ interface Style {
   transition: string
 }
 
+interface Skin {
+  id: string,
+  name: string,
+  num: number
+}
+
 export default function Detail() {
-  const { id } = useParams()
+  const { id } = useParams<string>()
+
+  if (id == undefined) {
+    return <h1>존재하지 않는 페이지입니다.</h1>
+  }
+
   const { data, error, isFetching, isLoading } = useQuery({
     queryKey: ["champion", id],
     queryFn: () => getChampDetails(id),
@@ -61,7 +72,7 @@ export default function Detail() {
         <div className="overflow-hidden w-full max-w-80">
           <div className="flex" style={style}>
             {
-              champion?.skins.map((skin) =>
+              champion?.skins.map((skin: Skin) =>
                 <Detailcard
                   key={skin.id}
                   name={skin.name == "default" ? "기본 스킨" : skin.name}
