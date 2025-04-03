@@ -1,18 +1,16 @@
-import { AuthForm } from "../../../widgets/auth/ui/authForm"
+import { AuthForm } from "../../../widgets/authForm/ui"
 import { useForm, Controller } from "react-hook-form"
-import { DevTool } from "@hookform/devtools"
-import { Input } from "../../../shared/ui/input/input"
-import { Button } from "../../../shared/ui/button/button"
 import { useNavigate } from "react-router-dom"
+import { DevTool } from "@hookform/devtools"
+import { Input } from "../../../shared/ui/input"
+import { Button } from "../../../shared/ui/button"
 
-interface SignUpProps {
-  name: string,
-  tag: string,
+interface LoginProps {
   email: string,
   password: string
 }
 
-export default function SignUp() {
+export default function Login() {
   const go = useNavigate()
 
   const {
@@ -20,46 +18,20 @@ export default function SignUp() {
     handleSubmit,
     formState: {
       errors,
-      isDirty,
       isValid
     }
-  } = useForm<SignUpProps>({
-    mode: "onChange",
-    defaultValues: {
-      name: '',
-      tag: '',
-      email: '',
-      password: ''
-    }
-  })
+  } = useForm<LoginProps>({ mode: "onChange", defaultValues: { email: '', password: '' } })
 
-  const onSubmit = (data: SignUpProps) => {
+  const onSubmit = (data: LoginProps) => {
     alert(`ℹ️ Form Submitted: ${JSON.stringify(data)}`)
   }
 
+
   return (
-    <AuthForm label={"GSM.GG 회원가입"}>
+    <AuthForm label={"GSM.GG 로그인"}>
       <DevTool control={control} />
       <form className="flex flex-col gap-5" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col gap-2">
-          <div className="flex justify-between gap-2">
-            <Controller
-              name="name"
-              control={control}
-              rules={{
-                required: "소환사 이름을 입력해주세요."
-              }}
-              render={({ field }) => <Input label="소환사 이름" type="text" {...field} error={errors.name?.message} />}
-            />
-            <Controller
-              name="tag"
-              control={control}
-              rules={{
-                required: "태그를 입력해주세요."
-              }}
-              render={({ field }) => <Input label="태그" type="text" placeHolder="#" {...field} error={errors.tag?.message} />}
-            />
-          </div>
           <Controller
             name="email"
             control={control}
@@ -90,8 +62,8 @@ export default function SignUp() {
             render={({ field }) => <Input label="비밀번호" type="password" {...field} error={errors.password?.message} />}
           />
         </div>
-        <Button variant="primary" label="회원가입" type="submit" isActive={isDirty && isValid} />
-        <a className="text-primary-300 font-semibold cursor-pointer" onClick={() => go('/login')}>이미 계정이 있으시다먼 [로그인]</a>
+        <Button variant="primary" label="로그인" type="submit" isActive={isValid} />
+        <a className="text-primary-300 font-semibold cursor-pointer" onClick={() => go('/signup')}>아직 계정이 없으시다먼 [회원가입]</a>
       </form>
     </AuthForm>
   )

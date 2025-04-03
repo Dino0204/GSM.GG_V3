@@ -1,4 +1,4 @@
-import { ChampCard } from "../../../widgets/card/ui/champCard"
+import { ChampCard } from "../../../widgets/champCard/ui";
 import { useQuery } from "@tanstack/react-query";
 import { getChampData, getChampProfile } from "../api";
 

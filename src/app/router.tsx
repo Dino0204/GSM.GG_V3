@@ -1,14 +1,15 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import RQProvider from './providers/RQProvider'
 
-import Main from '../pages/main/ui/main'
-import Champions from '../pages/champions/ui/champions'
-import Colors from '../pages/colors/ui/colors'
+import Main from '../pages/main/ui'
+import Champions from '../pages/champions/ui'
+import Colors from '../pages/colors/ui'
 
-import { AuthLayout } from '../widgets/auth/ui/authLayout'
-import SignUp from '../pages/signup/ui/signup'
-import Login from '../pages/login/ui/login'
-import Detail from '../pages/detail/ui/detail'
+import { AuthLayout } from '../widgets/authLayout/ui'
+import SignUp from '../pages/signup/ui'
+import Login from '../pages/login/ui'
+import Detail from '../pages/detail/ui'
+import Profile from '../pages/profile/ui'
 
 export default function Router() {
 
@@ -20,6 +21,7 @@ export default function Router() {
             <Route path="champions" element={<Champions />} />
             <Route path="champions/:id" element={<Detail />} />
             <Route path="colors" element={<Colors />} />
+            <Route path="profile" element={<Profile />} />
           </Route>
           <Route element={<AuthLayout />}>
             <Route path="signup" element={<SignUp />} />

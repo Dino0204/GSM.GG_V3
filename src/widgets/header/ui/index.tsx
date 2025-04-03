@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { Button } from "../button/button"
+import { Button } from "../../../shared/ui/button"
 
 export const Header = () => {
   const go = useNavigate()

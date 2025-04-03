@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getChampDetails, getChampSkin } from "../../../widgets/card/api";
-import { Detailcard } from "../../../widgets/card/ui/detailCard";
+import { getChampDetails, getChampSkin } from "../../../widgets/detailCard/api";
+import { Detailcard } from "../../../widgets/detailCard/ui";
 
 interface Style {
   transform: string,
