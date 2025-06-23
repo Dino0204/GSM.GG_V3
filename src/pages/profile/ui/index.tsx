@@ -1,12 +1,12 @@
-import { MyProfile } from "../../../widgets/myProfile/ui"
-import { MatchCard } from "../../../widgets/matchCard/ui"
+import { MatchCard } from "../../../widgets/matchCard/ui";
+import { MyProfile } from "../../../widgets/myProfile/ui";
 
 export default function Profile() {
-  return (
-    <div className="flex flex-col justify-center items-center gap-2">
-      <MyProfile />
-      <MatchCard />
-      {/* {matches && user && matches.map((match, index) => (
+	return (
+		<div className="flex flex-col justify-center items-center gap-2">
+			<MyProfile />
+			<MatchCard />
+			{/* {matches && user && matches.map((match, index) => (
         <Matchcard
           key={index}
           id={match}
@@ -14,7 +14,6 @@ export default function Profile() {
           myPuuid={user?.puuid}
         />
       ))} */}
-    </div>
-  )
+		</div>
+	);
 }
-
