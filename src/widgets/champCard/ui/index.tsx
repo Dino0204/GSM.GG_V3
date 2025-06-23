@@ -11,7 +11,8 @@ export const ChampCard = ({ name, splashImage, id }: ChampcardProps) => {
 
 	return (
 		<article className="flex items-center bg-gray-700 w-full p-1">
-			<div
+			<button
+				type="button"
 				className="flex items-center gap-2 cursor-pointer"
 				onClick={() => go(id)}
 			>
@@ -23,7 +24,7 @@ export const ChampCard = ({ name, splashImage, id }: ChampcardProps) => {
 					height={32}
 				/>
 				<span>{name}</span>
-			</div>
+			</button>
 		</article>
 	);
 };

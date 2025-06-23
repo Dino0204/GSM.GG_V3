@@ -1,4 +1,4 @@
-import { Item } from "../../../shared/ui/item";
+import { Item } from "../../../shared/item";
 
 export const MatchCard = () => {
 	return (

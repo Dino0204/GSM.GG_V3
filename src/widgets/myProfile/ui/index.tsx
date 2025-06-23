@@ -1,4 +1,4 @@
-import { Button } from "../../../shared/ui/button";
+import { Button } from "@/components/ui/button";
 
 export const MyProfile = () => {
 	return (
@@ -6,6 +6,7 @@ export const MyProfile = () => {
 			<img
 				className="w-[12.5rem] h-[12.5rem] rounded-[0.9375rem] border-primary-200"
 				src="../public/image 10.png"
+				alt="profile"
 			/>
 			<div className="flex flex-col w-[28.125rem] h-[12.5rem] items-start gap-[0.4375rem]">
 				<section className="flex w-full justify-between">
@@ -20,7 +21,7 @@ export const MyProfile = () => {
 							575LP
 						</h3>
 					</div>
-					<Button label="전적 갱신" variant="blue" />
+					<Button variant="default">전적 갱신</Button>
 				</section>
 			</div>
 		</div>
