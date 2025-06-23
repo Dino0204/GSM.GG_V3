@@ -18,7 +18,7 @@ export const Header = () => {
           <li className="cursor-pointer" onClick={() => go("/colors")}>색상</li>
         </ul>
         <div className="flex items-center gap-2">
-          <Button variant="primary" label="로그인" onClick={() => go("/login")} />
+          {/* <Button variant="blue" label="로그인" onClick={() => go("/login")} /> */}
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => go("/profile")}>
             프로필
             <img className="h-8" src="./public/profile.svg" alt="profile" />

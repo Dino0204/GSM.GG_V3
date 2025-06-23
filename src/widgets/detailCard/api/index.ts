@@ -1,5 +1,5 @@
 import { API } from "../../../app/types/api";
-import { RIOT_API, DDRAGON, VER, KR, AS } from "../../../app/consts";
+import { RIOT_API, DDRAGON, VER, KR, AS } from "../../../app/consts/env";
 
 /** 챔피언 상세 정보 취득 */
 export const getChampDetails = async (champ_id: string) => {
