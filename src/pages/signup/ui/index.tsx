@@ -90,7 +90,7 @@ export default function SignUp() {
             render={({ field }) => <Input label="비밀번호" type="password" {...field} error={errors.password?.message} />}
           />
         </div>
-        <Button variant="primary" label="회원가입" type="submit" isActive={isDirty && isValid} />
+        <Button variant="primary" label="회원가입" isActive={isDirty && isValid} />
         <a className="text-primary-300 font-semibold cursor-pointer" onClick={() => go('/login')}>이미 계정이 있으시다먼 [로그인]</a>
       </form>
     </AuthForm>

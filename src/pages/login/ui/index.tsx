@@ -62,7 +62,7 @@ export default function Login() {
             render={({ field }) => <Input label="비밀번호" type="password" {...field} error={errors.password?.message} />}
           />
         </div>
-        <Button variant="primary" label="로그인" type="submit" isActive={isValid} />
+        <Button variant="blue" label="로그인" isActive={isValid} />
         <a className="text-primary-300 font-semibold cursor-pointer" onClick={() => go('/signup')}>아직 계정이 없으시다먼 [회원가입]</a>
       </form>
     </AuthForm>

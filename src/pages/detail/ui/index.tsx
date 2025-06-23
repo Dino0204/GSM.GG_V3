@@ -22,7 +22,7 @@ export default function Detail() {
     return <h1>존재하지 않는 페이지입니다.</h1>
   }
 
-  const { data, error, isFetching, isLoading } = useQuery({
+  const { data, error, isError, isFetching, isLoading } = useQuery({
     queryKey: ["champion", id],
     queryFn: () => getChampDetails(id),
     enabled: !!id,
@@ -66,7 +66,6 @@ export default function Detail() {
   }
 
   return (
-
     <div className="flex justify-center text-white">
       <div className="relative">
         <div className="overflow-hidden w-full max-w-80">
